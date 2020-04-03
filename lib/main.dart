@@ -9,12 +9,12 @@ class XylophoneApp extends StatelessWidget {
     player.play('note$sound.wav');
   }
 
-  generateButton() {
+  Expanded generateButton({x, y}) {
     return Expanded(
       child: FlatButton(
-        color: Colors.blue[100],
+        color: Colors.blue[x],
         onPressed: () {
-          playSound(1);
+          playSound(y);
         },
       ),
     );
@@ -30,55 +30,13 @@ class XylophoneApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              generateButton(),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blue[200],
-                  onPressed: () {
-                    playSound(2);
-                  },
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blue[300],
-                  onPressed: () {
-                    playSound(3);
-                  },
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blue[400],
-                  onPressed: () {
-                    playSound(4);
-                  },
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blue[500],
-                  onPressed: () {
-                    playSound(5);
-                  },
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blue[600],
-                  onPressed: () {
-                    playSound(6);
-                  },
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blue[700],
-                  onPressed: () {
-                    playSound(7);
-                  },
-                ),
-              ),
+              generateButton(x: 100, y: 1),
+              generateButton(x: 200, y: 2),
+              generateButton(x: 300, y: 3),
+              generateButton(x: 400, y: 4),
+              generateButton(x: 500, y: 5),
+              generateButton(x: 600, y: 6),
+              generateButton(x: 700, y: 7),
             ],
           ),
         ),
